@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context.xsd
+	                    http://www.springframework.org/schema/aop
+	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+	                    
+	<bean id = "t1" class = "kr.hs.study.beans.TestBean1"/>
+	<bean id = "t2" class = "kr.hs.study.beans.TestBean1" lazy-init = "true" scope="prototype"/> <!-- lazy-init = "true" 한 번만 실행된다. 이걸 빼고 실행하면 기본 생성자 문구가 두 번 출력된다 -->
+	<!-- scope="prototype" : 객체를 가져올 때마다 다른 객체를 생성한다. -->
+	<bean id = "t3" class = "kr.hs.study.beans.TestBean1" init-method="initMethod"/> <!--  생성자 다음에 initMethod라는 이름을 가진 메서드를 실행해라 -->
+	<bean id = "t4" class = "kr.hs.study.beans.TestBean1" destroy-method="destroymethod"/>
+</beans>
