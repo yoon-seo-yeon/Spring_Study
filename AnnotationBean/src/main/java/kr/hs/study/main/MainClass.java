@@ -16,13 +16,13 @@ public class MainClass {
 		System.out.println("data1 : " + t1.getData1());
 		System.out.println("data2 : " + t1.getData2());
 	
-		System.out.println("===========================================");
+		System.out.println("=============================================");
 		
 		TestBean2 t2 = ctx.getBean("xml1", TestBean2.class);
 		System.out.println("data1 : " + t2.getData1());
 		System.out.println("data2 : " + t2.getData2());
 		
-		System.out.println("===========================================");
+		System.out.println("=============================================");
 
 		TestBean3 t3 = ctx.getBean("t3", TestBean3.class);
 		System.out.println("data1 : " + t3.getData1());
@@ -32,7 +32,7 @@ public class MainClass {
 		
 		ctx.close();
 		
-		System.out.println("===========================================");
+		System.out.println("=============================================");
 		
 		AnnotationConfigApplicationContext ctx2 = new AnnotationConfigApplicationContext(BeanConfigClass.class);
 		
