@@ -11,17 +11,24 @@
 	    
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
 	                    
-	<!-- DataBean1, TestBean1 --> 
-	<bean id = "data1" class = "kr.hs.study.beans.DataBean1"/>
-   	<bean id = "data2" class = "kr.hs.study.beans.DataBean1"/>
-   	<bean id = "data3" class = "kr.hs.study.beans.DataBean1"/>
-   	<bean id = "t1" class = "kr.hs.study.beans.TestBean1" autowire = "byName"/>
-   	
-   	<!-- DataBean2, TestBean2 --> 
-   	<bean id = "d1" class = "kr.hs.study.beans.DataBean2"/>
-   	<bean id = "t2" class = "kr.hs.study.beans.TestBean2" autowire="byType"/>
-   	
-   	<!-- DataBean3, TestBean3 --> 
-   	<bean id = "d2" class = "kr.hs.study.beans.DataBean3"/>
-   	<bean id = "t3" class = "kr.hs.study.beans.TestBean3" autowire = "constructor"/>
+   	<bean id = "t1" class = "kr.hs.study.beans.TestBean"/>
+	<bean id = "advisor" class = "kr.hs.study.advice.AdvisorClass"/>
+	
+	<aop:config>
+		<aop:aspect ref = "advisor"> <!-- advisor를 aspect모듈로 만듦 -->
+			<aop:pointcut id = "point" expression = "execution(* method1())"/> <!-- pointcut 지정 : method1 -->
+			<!-- <aop:before method = "beforeMethod" pointcut-ref = "point"/> -->
+			
+			<!-- method1 실행 후에 afterMethod 실행하게끔 설정 -->
+			<!-- <aop:after method = "afterMethod" pointcut-ref = "point"/> -->
+			
+			<!-- <aop:around method = "aroundMethod" pointcut-ref = "point"/> -->
+			
+			<!-- 예외발생없이 종료 후 실행 -->
+			<!-- <aop:after-returning method = "afterReturning" pointcut-ref = "point"/> -->
+			
+			<aop:after-throwing method = "afterThrowing" pointcut-ref = "point" throwing = "e"/>
+			
+		</aop:aspect>
+	</aop:config>
 </beans>
