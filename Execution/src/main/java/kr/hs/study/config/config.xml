@@ -48,6 +48,19 @@
    			<!-- 리턴타입 없음, kr.hs.study.beans패키지의 모든 클래스, method1() -->
    			<aop:pointcut id = "point" expression = "execution(void kr.hs.study.beans.*.method1(..))"/>
    			
+   			<!-- 리턴타입 없음, kr.hs.study.beans패키지의 모든 클래스, 모든 메서드() -->
+   			<aop:pointcut id = "point" expression = "execution(void kr.hs.study.beans.*.*(..))"/>
+   			
+   			<!-- 리턴타입 없음, 모든 패키지의 모든 클래스, 모든 메서드() -->
+   			<aop:pointcut id = "point" expression = "execution(void *.*(...))"/>
+   			
+   			<!-- 리턴타입 int, 모든 패키지의 모든 클래스, 모든 메서드() -->
+   			<!-- int 리턴타입 만들어주고 실행 -->
+   			<aop:pointcut id = "point" expression = "execution()"/>
+   			
+   			<!-- 모든 리턴타입, 모든 패키지의 모든 클래스, 모든 메서드() -->
+   			<aop:pointcut id = "point" expression = "execution()"/>
+   			
    			<aop:before method = "beforeMethod" pointcut-ref = "point"/>
    		</aop:aspect>
    	</aop:config>
