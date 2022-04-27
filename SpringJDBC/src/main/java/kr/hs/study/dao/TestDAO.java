@@ -19,4 +19,19 @@ public class TestDAO {
 		String sql = "insert into test values(?, ?)";
 		db.update(sql, bean.getData1(), bean.getData2());
 	}
+	
+	//update
+	public void update_data(TestBean bean) {
+		String sql = "update test set data2 = ? where data1 = ?";
+		db.update(sql, bean.getData2(), bean.getData1());
+		
+		//sql: update test set data=? where data1=?
+		//data1이 100인 data2값을 testtest로 변경
+	}
+	
+	//delete
+	public void delete_data(TestBean bean) {
+		String sql = "delete test where data1 = ?";
+		db.update(sql, bean.getData1());
+	}
 }
