@@ -17,17 +17,17 @@
 	<aop:config>
 		<aop:aspect ref = "advisor"> <!-- advisor를 aspect모듈로 만듦 -->
 			<aop:pointcut id = "point" expression = "execution(* method1())"/> <!-- pointcut 지정 : method1 -->
-			<!-- <aop:before method = "beforeMethod" pointcut-ref = "point"/> -->
+			<aop:before method = "beforeMethod" pointcut-ref = "point"/> 
 			
 			<!-- method1 실행 후에 afterMethod 실행하게끔 설정 -->
-			<!-- <aop:after method = "afterMethod" pointcut-ref = "point"/> -->
+			<aop:after method = "afterMethod" pointcut-ref = "point"/>
 			
-			<!-- <aop:around method = "aroundMethod" pointcut-ref = "point"/> -->
+			 <aop:around method = "aroundMethod" pointcut-ref = "point"/>
 			
 			<!-- 예외발생없이 종료 후 실행 -->
-			<!-- <aop:after-returning method = "afterReturning" pointcut-ref = "point"/> -->
+			<aop:after-returning method = "afterReturning" pointcut-ref = "point"/> 
 			
-			<aop:after-throwing method = "afterThrowing" pointcut-ref = "point" throwing = "e"/>
+			
 			
 		</aop:aspect>
 	</aop:config>

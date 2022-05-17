@@ -3,7 +3,7 @@ package kr.hs.study.beans;
 public class TestBean {
 	public void method1() {
 		System.out.println("method1 »£√‚");
-		int a = 100/0;
+		//int a = 100/0;
 	}
 	
 	public void method2() {
